@@ -6,8 +6,8 @@
 {% endblock %}
 
 {% block content %}
-    <form method="post">
-        <form method="post">
+    <form method="post" class="form">
+        <form method="post" class="form">
             <h1>YOUR NAME:</h1>
             <input required name="client_name" id="inputform">
             <h1>YOUR EMAIL:</h1>
@@ -17,16 +17,6 @@
                 <textarea name="client_review" id="textform"></textarea>
                 <button type="submit" name = "send_email" value = "email">SEND</button>
             </div>
-            {% if is_login %}
-                <form method = "post">
-                    <img src="{{ url_for('home.static', filename= 'img/image2.png')}}" class = "img2">
-                    <p class="paragraph">{{ name }}</p>
-                    <button type = "submit" class = "logout">LOGOUT</button>
-                </form>
-            {% else %}
-                <a href="/registration/">REGISTRATION</a>
-                <a href="/authorization/">AUTHORIZATION</a>
-            {% endif %}
         </form>
     </form>
 

@@ -8,27 +8,27 @@
 {% endblock %}
 
 {% block content %}
-    <div>
+    <div class="div">
         <a href="tour/Tokyo/" class="tokyolink">TOKYO</a>
         <img src="{{ url_for('tour.static', filename= 'img/tokyo.png') }}" class="tokyo">
         <h1>31.10.2024</h1>
         <h1 class="price">3200$</h1>
-        <img src="{{ url_for('tour.static', filename= 'img/tokyo_sign.png') }}" class="tokyosign">
+        <img src="{{ url_for('tour.static', filename= 'img/weather/' + icon_tokyo) }}" class="tokyosign">
     </div>
 
-    <div>
+    <div class="div">
         <a href="tour/Paris/" class="parislink">PARIS</a>
         <img src="{{ url_for('tour.static', filename= 'img/paris.png') }}" class="paris">
         <h1>20.11.2024</h1>
         <h1 class="price">2700$</h1>
-        <img src="{{ url_for('tour.static', filename= 'img/paris_sign.png') }}" class="parissign">
+        <img src="{{ url_for('tour.static', filename= 'img/weather/' + icon_paris) }}" class="parissign">
     </div>
 
-    <div>
+    <div class="div">
         <a href="tour/Madrid/" class="madridlink">MADRID</a>
         <img src="{{ url_for('tour.static', filename= 'img/madrid.png') }}" class="madrid">
         <h1>10.12.2024</h1>
         <h1 class="price">2900$</h1>
-        <img src="{{ url_for('tour.static', filename= 'img/madrid_sign.png') }}" class="madridsign">
+        <img src="{{ url_for('tour.static', filename= 'img/weather/' + icon_madrid) }}" class="madridsign">
     </div>
 {% endblock %}

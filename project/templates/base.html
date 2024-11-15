@@ -11,9 +11,20 @@
 <body>
     <img src="{{ url_for('static', filename= 'img/image.png')}}" class = "img1">
     <header>
-        <a href="/">HOME</a>
-        <a href="/tour/">TOUR</a>
-
+        <div class = "header">
+            <a href="/" class = "home">HOME</a>
+            <a href="/tour/" class = "tour">TOUR</a>
+            {% if is_login %}
+                <form method = "post">
+                    <img src="{{ url_for('static', filename= 'img/image2.png')}}" class = "img2">
+                    <p class="p">{{ name }}</p>
+                    <button type = "submit" class = "logout">LOGOUT</button>
+                </form>
+            {% else %}
+                <a href="/registration/" class="reg">REGISTRATION</a>
+                <a href="/authorization/" class="auth">AUTHORIZATION</a>
+            {% endif %}
+        </div>
         
         
         {% block line %}

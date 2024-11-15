@@ -3,6 +3,7 @@ from .models import Tour
 from project.settings import travel_agency
 from project.settings import DATABASE
 import flask_login
+from .weather import *
 
 all_titles = []
 with travel_agency.app_context():
@@ -29,9 +30,9 @@ def render_tour():
        flask_login.logout_user() 
        return flask.redirect("/tour/")
     try:
-        return flask.render_template(template_name_or_list='tour.html', titles = all_titles, is_login = is_login, name = flask_login.current_user.username)
+        return flask.render_template(template_name_or_list='tour.html', titles = all_titles, is_login = is_login, name = flask_login.current_user.username, icon_tokyo = dict_icons['Tokyo'], icon_madrid = dict_icons['Madrid'], icon_paris = dict_icons['Paris'])
     except:
-        return flask.render_template(template_name_or_list='tour.html', titles = all_titles, is_login = is_login, name = "")
+        return flask.render_template(template_name_or_list='tour.html', titles = all_titles, is_login = is_login, name = "", icon_tokyo = dict_icons['Tokyo'], icon_madrid = dict_icons['Madrid'], icon_paris = dict_icons['Paris'])
 def render_paris():
     return flask.render_template(template_name_or_list='paris.html', title = tour_paris.title, date = tour_paris.date, country = tour_paris.country, is_login = is_login, name = flask_login.current_user.username)
 
